@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<style>
+	body,div,ul,li,img{margin: 0;padding: 0;}
+	li{list-style: none;}
+	body{background: black;}
+	#box{
+		width: 700px;
+		height: 350px;
+		border:1px solid black;
+		margin: 200px auto;
+		overflow: hidden;
+		padding: 10px;
+		background: white;
+	}
+	#img{float: left;}
+	#img img{display:none;}
+	ul{
+		width: 150px;
+		height: 350px;
+		float: right;
+	}
+	div ul li{
+		width: 150px;
+		height: 69px;
+		background: #211821;
+		border-bottom: 1px solid white;
+		cursor: pointer;
+		font-size: 12px;
+		line-height: 30px;
+		text-align: center;
+		color: white;
+	}
+	div ul li span{
+		font-size: 16px;
+		font-weight: bold;
+	}
+	#hover{
+		background-color: #f7528c;
+	}
+
+</style>
+<body>
+	<div id="box">
+		<div id="img">
+			<img style="display: block" src="img/1.png" height="350" width="550" alt="">
+			<img src="img/2.png" height="350" width="550" alt="">
+			<img src="img/3.png" height="350" width="550" alt="">
+			<img src="img/4.png" height="350" width="550" alt="">
+			<img src="img/5.png" height="350" width="550" alt="">
+		</div>
+		<ul>
+			<li id="hover"><span>时髦新品</span><br/>天天见</li>
+			<li><span>简约之美</span><br/>约克郡的优雅</li>
+			<li><span>HOLLOW风潮</span><br/>性感一夏</li>
+			<li><span>"公主病"万岁</span><br/>免费游迪斯尼</li>
+			<li><span>纯棉立体</span><br/>小清新T恤</li>
+		</ul>
+	</div>
+</body>
+<script> 
+    var lis=document.getElementsByTagName("img");
+    var btns=document.getElementsByTagName("li"); 
+    for (var i=0; i<btns.length; i++) {
+        btns[i].index=i;  /*这个是不让运行结束*/
+        btns[i].onmouseover=function(){
+            for (var i=0; i<btns.length; i++) {
+               	btns[i].id= "";
+                lis[i].style.display = "none";
+            }
+            btns[this.index].id= "hover";
+            lis[this.index].style.display = "block";
+        }
+    }
+</script>
